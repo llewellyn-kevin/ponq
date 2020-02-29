@@ -1,0 +1,16 @@
+<h1>New Club</h1>
+<%= form_with scope: :club, url: clubs_path, local: true do |form| %>
+  <p>
+    <%= form.label :name %><br />
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :pin %><br />
+    <%= form.text_field :pin %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
