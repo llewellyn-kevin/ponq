@@ -6,5 +6,6 @@
     Pin:
     <em> <%= @club.pin %> </em>
   </p>
-  <p><%= link_to '< View All Clubs', controller: 'clubs' %>
+  <p><%= link_to 'Edit', edit_club_path(@club) %>
+  <p><%= link_to 'View All Clubs', controller: 'clubs' %>
 </p>

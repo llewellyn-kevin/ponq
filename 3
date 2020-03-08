@@ -11,10 +11,6 @@ class ClubsController < ApplicationController
     @club = Club.new
   end 
 
-  def edit 
-    @club = Club.find(params[:id])
-  end
-
   def create
     @club = Club.new(club_params)
 
@@ -28,7 +24,9 @@ class ClubsController < ApplicationController
   def update
     @club = Club.find(params[:id])
 
-    if @club.update(club_params)
+    logger.debug @club
+
+    if @club.update(article_params)
       redirect_to @club
     else 
       render 'edit'
