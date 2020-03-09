@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+  get 'login', to: 'session#new'
+  post 'login', to: 'session#create'
+  get 'welcome', to: 'session#welcome'
 
+  resources :users, only: [:new, :create]
   resources :clubs
 
-  root 'welcome#index'
+  root 'session#welcome'
 end
