@@ -1,2 +1,19 @@
-<h1>Session#new</h1>
-<p>Find me in app/views/session/new.html.erb</p>
+<%= form_with url: login_url, method: :post do |form| %>
+
+  <% if @user.errors.any? %>
+    <div id="error_explanations">
+      <% @user.errors.full_messages.each do |msg| %>
+        <p>msg</p>
+      <% end %>
+    </div>
+  <% end %>
+
+  <%= form.label :email %><br>
+  <%= form.email_field :email %><br>
+
+  <%= form.label :password %><br>
+  <%= form.password_field :password %><br>
+
+  <%= form.submit %>
+<% end %>
+<%= link_to 'Cancel', root_path %>
