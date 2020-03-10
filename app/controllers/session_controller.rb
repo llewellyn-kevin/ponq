@@ -7,6 +7,7 @@ class SessionController < ApplicationController
     @user = User.find_by(email: params[:email])
 
     if !@user 
+      # TODO: Fix errors so they will actually display
       @user.errors.add(:base, :invalid, message: "username not found")
       render 'new'
     elsif !@user.authenticate(params[:password])

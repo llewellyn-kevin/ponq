@@ -1,5 +1,6 @@
 <%= form_with url: login_url, method: :post do |form| %>
 
+  <!-- TODO: Fix errors so they actually display -->
   <% if @user.errors.any? %>
     <div id="error_explanations">
       <% @user.errors.full_messages.each do |msg| %>
