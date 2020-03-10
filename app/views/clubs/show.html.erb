@@ -2,10 +2,19 @@
   <strong>
     <%= @club.name %>
   </strong>
+
   <p>
     Pin:
     <em> <%= @club.pin %> </em>
   </p>
+
+  <p>Members:</p>
+  <ul>
+    <% @club.users.each do |member| %>
+      <li><%= full_name member %></li>
+    <% end %>
+  </ul>
+
   <p><%= link_to 'Edit', edit_club_path(@club) %>
   <p><%= link_to 'View All Clubs', controller: 'clubs' %>
 </p>
