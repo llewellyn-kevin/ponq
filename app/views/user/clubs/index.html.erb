@@ -1,5 +1,10 @@
+<h1>Your Clubs</h1>
+<%= link_to 'Sign Out', logout_url, method: :post %>
 <ul>
   <% current_user.clubs.each do |club| %>
-    <li><%= club.name %></li>
+    <li>
+      <%= link_to club.name, user_club_url(club) %><br>
+      <%= pluralize(member_count(club), 'member') %>
+    </li>
   <% end %>
 </ul>

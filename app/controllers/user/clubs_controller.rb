@@ -3,6 +3,6 @@ class User::ClubsController < ApplicationController
   end 
 
   def show
-    @club = Club.find(params[:club_id])
+    @club = Club.find(params[:id])
   end 
 end
