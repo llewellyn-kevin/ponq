@@ -1,0 +1,5 @@
+<ul>
+  <% current_user.clubs.each do |club| %>
+    <li><%= club.name %></li>
+  <% end %>
+</ul>

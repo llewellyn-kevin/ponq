@@ -42,6 +42,15 @@ class ClubsController < ApplicationController
     redirect_to clubs_path
   end
 
+  def user_index
+    @user = current_user
+  end 
+
+  def user_show
+    @user = current_user
+    @club = Club.find(params[:club_id])
+  end
+
   private
     def club_params
       params.require(:club).permit(:name, :pin)
